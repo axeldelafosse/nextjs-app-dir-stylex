@@ -1,7 +1,7 @@
-import * as stylex from "@stylexjs/stylex";
-import { globalTokens as $, spacing, text } from "./globalTokens.stylex";
-import { colors } from "@stylexjs/open-props/lib/colors.stylex";
-import { tokens } from "./CardTokens.stylex";
+import {css} from "react-strict-dom";
+import {globalTokens as $, spacing, text} from "./globalTokens.stylex";
+import {colors} from "@stylexjs/open-props/lib/colors.stylex";
+import {tokens} from "./CardTokens.stylex";
 
 type Props = Readonly<{
   title: string;
@@ -9,18 +9,18 @@ type Props = Readonly<{
   href: string;
 }>;
 
-export default function Card({ title, body, href }: Props) {
+export default function Card({title, body, href}: Props) {
   return (
     <a
       href={href}
-      {...stylex.props(styles.link)}
+      {...css.props(styles.link)}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <h2 {...stylex.props(styles.h2)}>
-        {title} <span {...stylex.props(styles.span)}>→</span>
+      <h2 {...css.props(styles.h2)}>
+        {title} <span {...css.props(styles.span)}>→</span>
       </h2>
-      <p {...stylex.props(styles.p)}>{body}</p>
+      <p {...css.props(styles.p)}>{body}</p>
     </a>
   );
 }
@@ -35,7 +35,7 @@ const CardBgTranslucent = `rgba(${$.cardR}, ${$.cardG}, ${$.cardB}, 0.1)`;
 const cardBorderTransparent = `rgba(${$.cardBorderR}, ${$.cardBorderG}, ${$.cardBorderB}, 0)`;
 const cardBorderHover = `rgba(${$.cardBorderR}, ${$.cardBorderG}, ${$.cardBorderB}, 0.1)`;
 
-const styles = stylex.create({
+const styles = css.create({
   link: {
     display: {
       default: "flex",

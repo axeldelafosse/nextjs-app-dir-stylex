@@ -1,14 +1,10 @@
-import * as stylex from "@stylexjs/stylex";
+import {css} from "react-strict-dom";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <div {...stylex.props(styles.container)}>{children}</div>;
+export default function RootLayout({children}: {children: React.ReactNode}) {
+  return <div {...css.props(styles.container)}>{children}</div>;
 }
 
-const styles = stylex.create({
+const styles = css.create({
   container: {
     width: "100%",
     maxWidth: 768,

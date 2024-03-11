@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex";
+import {css} from "react-strict-dom";
 import Card from "./Card";
-import { globalTokens as $, spacing, text } from "./globalTokens.stylex";
+import {globalTokens as $, spacing, text} from "./globalTokens.stylex";
 import ButtonsDemo from "./components/ButtonsDemo";
 import Counter from "./components/Counter";
 
@@ -8,22 +8,22 @@ const HOMEPAGE = "http://stylex-docusaurus.vercel.app";
 
 export default function Home() {
   return (
-    <main {...stylex.props(s.main)}>
-      <div {...stylex.props(s.description)}>
-        <p {...stylex.props(s.descP)}>
+    <main {...css.props(s.main)}>
+      <div {...css.props(s.description)}>
+        <p {...css.props(s.descP)}>
           Get started by editing&nbsp;
-          <code {...stylex.props(s.code)}>app/page.tsx</code>
+          <code {...css.props(s.code)}>app/page.tsx</code>
         </p>
       </div>
-      <div {...stylex.props(s.hero)}>
-        <h1 {...stylex.props(s.h1)}>
-          Next.js App Dir<span {...stylex.props(s.emoji)}>♥️</span>️StyleX
+      <div {...css.props(s.hero)}>
+        <h1 {...css.props(s.h1)}>
+          Next.js App Dir<span {...css.props(s.emoji)}>♥️</span>️StyleX
         </h1>
         <Counter />
       </div>
       <ButtonsDemo />
 
-      <div {...stylex.props(s.grid)}>
+      <div {...css.props(s.grid)}>
         <Card
           href={`${HOMEPAGE}/docs/learn/`}
           title="Docs"
@@ -57,7 +57,7 @@ const bgImage = `linear-gradient(to bottom, ${$.bgStartRGB}, ${$.calloutRGB50})`
 const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`;
 const xBorderBottomColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.25)`;
 
-const s = stylex.create({
+const s = css.create({
   main: {
     display: "flex",
     flexDirection: "column",
@@ -115,17 +115,17 @@ const s = stylex.create({
     alignItems: "center",
     justifyContent: "center",
     gap: spacing.xxs,
-    padding: { [MEDIA_MOBILE]: spacing.sm },
+    padding: {[MEDIA_MOBILE]: spacing.sm},
   },
   descP: {
-    display: { [MEDIA_MOBILE]: "flex" },
+    display: {[MEDIA_MOBILE]: "flex"},
     position: {
       default: "relative",
       [MEDIA_MOBILE]: "fixed",
     },
-    justifyContent: { [MEDIA_MOBILE]: "center" },
-    alignItems: { [MEDIA_MOBILE]: "center" },
-    width: { [MEDIA_MOBILE]: "100%" },
+    justifyContent: {[MEDIA_MOBILE]: "center"},
+    alignItems: {[MEDIA_MOBILE]: "center"},
+    width: {[MEDIA_MOBILE]: "100%"},
     margin: 0,
     paddingInline: spacing.sm,
     paddingTop: {
@@ -155,7 +155,7 @@ const s = stylex.create({
       default: spacing.xs,
       [MEDIA_MOBILE]: 0,
     },
-    inset: { [MEDIA_MOBILE]: "0 0 auto" },
+    inset: {[MEDIA_MOBILE]: "0 0 auto"},
   },
   code: {
     fontWeight: 700,
@@ -173,6 +173,6 @@ const s = stylex.create({
       default: "100%",
       [MEDIA_MOBILE]: 320,
     },
-    textAlign: { [MEDIA_MOBILE]: "center" },
+    textAlign: {[MEDIA_MOBILE]: "center"},
   },
 });
