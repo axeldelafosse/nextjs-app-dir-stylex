@@ -11,4 +11,5 @@ const nextConfig = {
 
 module.exports = stylexPlugin({
   rootDir: __dirname,
+  stylexImports: ["@stylexjs/stylex", {from: "react-strict-dom", as: "css"}],
 })(withMDX(nextConfig));

@@ -1,4 +1,4 @@
-import stylex from "@stylexjs/stylex";
+import {css} from "react-strict-dom";
 
 /**
  * o--o o    o   o o-O-o o-o       o--o  o-o  o   o o-O-o  o-o
@@ -73,7 +73,7 @@ const INTERCEPT = {
 };
 
 // prettier-ignore
-export const text = stylex.defineVars({
+export const text = css.defineVars({
   xxs: `clamp(${ Math.min(MIN_FONT.xxs) }rem, calc(${ INTERCEPT.xxs }rem + ${ Math.round(10000 * SLOPE.xxs) / 100 }vw), ${ Math.max(MAX_FONT.xxs) }rem)`,
   xs:  `clamp(${ Math.min(MIN_FONT.xs ) }rem, calc(${ INTERCEPT.xs  }rem + ${ Math.round(10000 * SLOPE.xs ) / 100 }vw), ${ Math.max(MAX_FONT.xs ) }rem)`,
   sm:  `clamp(${ Math.min(MIN_FONT.sm ) }rem, calc(${ INTERCEPT.sm  }rem + ${ Math.round(10000 * SLOPE.sm ) / 100 }vw), ${ Math.max(MAX_FONT.sm ) }rem)`,
@@ -176,7 +176,7 @@ const INTERCEPT_SPACE = {
 };
 
 // prettier-ignore
-export const spacing = stylex.defineVars({
+export const spacing = css.defineVars({
   xxxs:  `clamp(${MIN_SPACE.xxxs  }px, calc(${INTERCEPT_SPACE.xxxs  }px + ${ Math.round(10000 * SLOPE_SPACE.xxxs  ) / 100 }vw), ${MAX_SPACE.xxxs  }px)`,
   xxs:   `clamp(${MIN_SPACE.xxs   }px, calc(${INTERCEPT_SPACE.xxs   }px + ${ Math.round(10000 * SLOPE_SPACE.xxs   ) / 100 }vw), ${MAX_SPACE.xxs   }px)`,
   xs:    `clamp(${MIN_SPACE.xs    }px, calc(${INTERCEPT_SPACE.xs    }px + ${ Math.round(10000 * SLOPE_SPACE.xs    ) / 100 }vw), ${MAX_SPACE.xs    }px)`,
@@ -194,7 +194,7 @@ export const spacing = stylex.defineVars({
  */
 const DARK_MODE = "@media (prefers-color-scheme: dark)";
 
-export const globalTokens = stylex.defineVars({
+export const globalTokens = css.defineVars({
   maxWidth: `${MAX_WIDTH}px`,
   fontMono: [
     "ui-monospace",
@@ -226,33 +226,33 @@ export const globalTokens = stylex.defineVars({
     '"Noto Color Emoji"',
   ].join(", "),
 
-  foregroundR: { default: "0", [DARK_MODE]: "255" },
-  foregroundG: { default: "0", [DARK_MODE]: "255" },
-  foregroundB: { default: "0", [DARK_MODE]: "255" },
+  foregroundR: {default: "0", [DARK_MODE]: "255"},
+  foregroundG: {default: "0", [DARK_MODE]: "255"},
+  foregroundB: {default: "0", [DARK_MODE]: "255"},
 
-  bgStartRGB: { default: "rgb(214, 219, 220)", [DARK_MODE]: "rgb(0, 0, 0)" },
+  bgStartRGB: {default: "rgb(214, 219, 220)", [DARK_MODE]: "rgb(0, 0, 0)"},
 
-  bgEndR: { default: "255", [DARK_MODE]: "0" },
-  bgEndG: { default: "255", [DARK_MODE]: "0" },
-  bgEndB: { default: "255", [DARK_MODE]: "0" },
+  bgEndR: {default: "255", [DARK_MODE]: "0"},
+  bgEndG: {default: "255", [DARK_MODE]: "0"},
+  bgEndB: {default: "255", [DARK_MODE]: "0"},
 
-  calloutRGB: { default: "rgb(238, 240, 241)", [DARK_MODE]: "rgb(20, 20, 20)" },
+  calloutRGB: {default: "rgb(238, 240, 241)", [DARK_MODE]: "rgb(20, 20, 20)"},
   calloutRGB50: {
     default: "rgba(238, 240, 241, 0.5)",
     [DARK_MODE]: "rgba(20, 20, 20, 0.5)",
   },
 
-  calloutBorderR: { default: "172", [DARK_MODE]: "108" },
-  calloutBorderG: { default: "175", [DARK_MODE]: "108" },
-  calloutBorderB: { default: "176", [DARK_MODE]: "108" },
+  calloutBorderR: {default: "172", [DARK_MODE]: "108"},
+  calloutBorderG: {default: "175", [DARK_MODE]: "108"},
+  calloutBorderB: {default: "176", [DARK_MODE]: "108"},
 
-  cardR: { default: "180", [DARK_MODE]: "100" },
-  cardG: { default: "185", [DARK_MODE]: "100" },
-  cardB: { default: "188", [DARK_MODE]: "100" },
+  cardR: {default: "180", [DARK_MODE]: "100"},
+  cardG: {default: "185", [DARK_MODE]: "100"},
+  cardB: {default: "188", [DARK_MODE]: "100"},
 
-  cardBorderR: { default: "131", [DARK_MODE]: "200" },
-  cardBorderG: { default: "134", [DARK_MODE]: "200" },
-  cardBorderB: { default: "135", [DARK_MODE]: "200" },
+  cardBorderR: {default: "131", [DARK_MODE]: "200"},
+  cardBorderG: {default: "134", [DARK_MODE]: "200"},
+  cardBorderB: {default: "135", [DARK_MODE]: "200"},
 
   primaryGlow: {
     default:

@@ -1,7 +1,7 @@
 "use client";
 
-import * as stylex from "@stylexjs/stylex";
-import { buttonTokens } from "./ButtonTokens.stylex";
+import {css} from "react-strict-dom";
+import {buttonTokens} from "./ButtonTokens.stylex";
 import ThemeableButton from "./ThemeableButton";
 
 type Props = Readonly<{}>;
@@ -11,7 +11,7 @@ export default function ButtonsDemo(_props: Props) {
     console.log("click");
   };
   return (
-    <div {...stylex.props(styles.container)}>
+    <div {...css.props(styles.container)}>
       <ThemeableButton onClick={onClick}>Vanilla Button</ThemeableButton>
 
       <ThemeableButton onClick={onClick} style={styles.bordered}>
@@ -22,7 +22,7 @@ export default function ButtonsDemo(_props: Props) {
         Red Button
       </ThemeableButton>
 
-      <div {...stylex.props(redTheme)}>
+      <div {...css.props(redTheme)}>
         <ThemeableButton onClick={onClick}>
           Red Button By inheritance
         </ThemeableButton>
@@ -39,7 +39,7 @@ export default function ButtonsDemo(_props: Props) {
   );
 }
 
-const redTheme = stylex.createTheme(buttonTokens, {
+const redTheme = css.createTheme(buttonTokens, {
   bgColor: "red",
   textColor: "white",
   cornerRadius: "4px",
@@ -47,7 +47,7 @@ const redTheme = stylex.createTheme(buttonTokens, {
   paddingInline: "8px",
 });
 
-const styles = stylex.create({
+const styles = css.create({
   container: {
     display: "flex",
     flexDirection: "column",

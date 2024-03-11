@@ -1,5 +1,3 @@
-import * as stylex from "@stylexjs/stylex";
-
 import ThemeableButton from "../app/components/ThemeableButton";
 import renderer from "react-test-renderer";
 import React from "react";

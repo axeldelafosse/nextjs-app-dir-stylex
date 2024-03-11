@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex";
+import {css} from "react-strict-dom";
 
-export const buttonTokens = stylex.defineVars({
+export const buttonTokens = css.defineVars({
   bgColor: "blue",
   textColor: "white",
   cornerRadius: "4px",

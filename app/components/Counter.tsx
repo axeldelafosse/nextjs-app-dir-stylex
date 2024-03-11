@@ -9,25 +9,25 @@
 
 "use client";
 
-import * as stylex from "@stylexjs/stylex";
-import { spacing, text, globalTokens as $ } from "../globalTokens.stylex";
-import { colors } from "@stylexjs/open-props/lib/colors.stylex";
-import { shadows } from "@stylexjs/open-props/lib/shadows.stylex";
-import { useState } from "react";
+import {css} from "react-strict-dom";
+import {spacing, text, globalTokens as $} from "../globalTokens.stylex";
+import {colors} from "@stylexjs/open-props/lib/colors.stylex";
+import {shadows} from "@stylexjs/open-props/lib/shadows.stylex";
+import {useState} from "react";
 
 export default function Counter() {
   const [count, setCount] = useState(0);
 
   return (
-    <div {...stylex.props(styles.container)}>
+    <div {...css.props(styles.container)}>
       <button
-        {...stylex.props(styles.button)}
+        {...css.props(styles.button)}
         onClick={() => setCount((c) => c - 1)}
       >
         -
       </button>
       <div
-        {...stylex.props(
+        {...css.props(
           styles.count,
           (count > 99 || count < -9) && styles.largeNumber
         )}
@@ -35,7 +35,7 @@ export default function Counter() {
         {count}
       </div>
       <button
-        {...stylex.props(styles.button)}
+        {...css.props(styles.button)}
         onClick={() => setCount((c) => c + 1)}
       >
         +
@@ -46,7 +46,7 @@ export default function Counter() {
 
 const DARK = "@media (prefers-color-scheme: dark)" as const;
 
-const styles = stylex.create({
+const styles = css.create({
   container: {
     display: "flex",
     alignItems: "center",

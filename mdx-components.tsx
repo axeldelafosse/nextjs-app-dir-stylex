@@ -1,11 +1,11 @@
-import type { MDXComponents } from "mdx/types";
+import type {MDXComponents} from "mdx/types";
 
-import * as stylex from "@stylexjs/stylex";
-import { globalTokens as $, spacing, text } from "./app/globalTokens.stylex";
-import { colors } from "@stylexjs/open-props/lib/colors.stylex";
+import {css} from "react-strict-dom";
+import {globalTokens as $, spacing, text} from "./app/globalTokens.stylex";
+import {colors} from "@stylexjs/open-props/lib/colors.stylex";
 
 const MOBILE = "@media (max-width: 700px)";
-const styles = stylex.create({
+const styles = css.create({
   base: {
     fontFamily: $.fontSans,
     padding: 0,
@@ -35,30 +35,30 @@ const styles = stylex.create({
 });
 
 function H1(props: any) {
-  return <h1 {...props} {...stylex.props(styles.base, styles.h1)} />;
+  return <h1 {...props} {...css.props(styles.base, styles.h1)} />;
 }
 
 function H2(props: any) {
-  return <h2 {...props} {...stylex.props(styles.base, styles.h2)} />;
+  return <h2 {...props} {...css.props(styles.base, styles.h2)} />;
 }
 
 function H3(props: any) {
-  return <h3 {...props} {...stylex.props(styles.base, styles.h3)} />;
+  return <h3 {...props} {...css.props(styles.base, styles.h3)} />;
 }
 
 function P(props: any) {
-  return <p {...props} {...stylex.props(styles.base, styles.p)} />;
+  return <p {...props} {...css.props(styles.base, styles.p)} />;
 }
 
 function Ul(props: any) {
-  return <ul {...props} {...stylex.props(styles.base, styles.p)} />;
+  return <ul {...props} {...css.props(styles.base, styles.p)} />;
 }
 function Ol(props: any) {
-  return <ol {...props} {...stylex.props(styles.base, styles.p)} />;
+  return <ol {...props} {...css.props(styles.base, styles.p)} />;
 }
 
 function Li(props: any) {
-  return <li {...props} {...stylex.props(styles.base, styles.p, styles.li)} />;
+  return <li {...props} {...css.props(styles.base, styles.p, styles.li)} />;
 }
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
